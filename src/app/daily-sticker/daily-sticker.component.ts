@@ -1,36 +1,59 @@
 import {Component, Input, OnInit} from '@angular/core';
 
+interface Lesson {
+  time: String,
+  format: String,
+  teacher: String,
+  title: String,
+  theme: String
+}
+
 @Component({
   selector: 'daily-sticker',
   templateUrl: './daily-sticker.component.html',
   styleUrls: ['./daily-sticker.component.css']
 })
-export class DailyStickerComponent implements OnInit {
+export class DailyStickerComponent {
   @Input()
   isActive: boolean = false;
 
   @Input()
   weekDay: number = 0;
 
-  // constructor(private _weekDay: Number) {
-  constructor () {
-    console.log(this.isActive);
-  }
+  dayString: String[] = ["Понедельник", "Вторик", "Среда", "Четверг", "Пятница", "Суббота"];
 
-  ngOnInit(): void {
-  }
+  lessons: Array<Lesson> = [
+    {
+      time: "16:30",
+      format: "Урок",
+      teacher: "Шутова Е. В.",
+      title: "Инженерная графика",
+      theme: "Почему проффесию выбирают в раннем возрасте ?"
+    },
+    {
+      time: "16:30",
+      format: "Урок",
+      teacher: "Шутова Е. В.",
+      title: "Инженерная графика",
+      theme: "Почему проффесию выбирают в раннем возрасте ?"
+    },
+    {
+      time: "16:30",
+      format: "Урок",
+      teacher: "Шутова Е. В.",
+      title: "Инженерная графика",
+      theme: "Почему проффесию выбирают в раннем возрасте ?"
+    },
+    {
+      time: "16:30",
+      format: "Урок",
+      teacher: "Шутова Е. В.",
+      title: "Инженерная графика",
+      theme: "Почему проффесию выбирают в раннем возрасте ?"
+    }
+  ]
 
-  // getWeekDay(): Number {
-  //   return this._weekDay;
-  // }
-
-  activate(): void {
-    this.isActive = true;
-  }
-
-  deactivate(): void {
-    this.isActive = false;
-  }
+  constructor () {}
 
   renderClass(): String {
     let res: String = "body";

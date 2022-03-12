@@ -80,6 +80,8 @@ main .main_info {
 
   background: #F9F9FB;
 
+  font-family: 'Roboto', sans-serif;
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

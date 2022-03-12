@@ -29,9 +29,8 @@
   <div class="main_info">
 
     <div class="daily-sticker" *ngFor="let v of stickerCount; let i = index">
-<!--      <h1>{{i}}</h1>-->
-      <daily-sticker *ngIf="i === currentDay" [isActive]="true" [weekDay]="i+1"></daily-sticker>
-      <daily-sticker *ngIf="i !== currentDay" [isActive]="false" [weekDay]="i+1"></daily-sticker>
+      <daily-sticker *ngIf="cycleNum(0, i + startDay, 5) === currentDay" [isActive]="true" [weekDay]="cycleNum(0, i + startDay, 5)"></daily-sticker>
+      <daily-sticker *ngIf="cycleNum(0, i + startDay, 5) !== currentDay" [isActive]="false" [weekDay]="cycleNum(0, i + startDay, 5)"></daily-sticker>
     </div>
 
   </div>

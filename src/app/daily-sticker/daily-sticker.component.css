@@ -1,14 +1,45 @@
 .body {
-  width: 96%;
+  width: 93%;
   height: 96%;
 
-  padding: .5em;
+  padding: .5em .8em;
 
 
   background: white;
   border-radius: 15px;
+
+  overflow: hidden;
 }
 .active {
   background: #F2F8FB;
   border: 2px solid #83C1E0;
 }
+
+
+.sticker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sticker-header h3 {
+  flex-grow: .5;
+
+  color: #080922;
+}
+.sticker-header .date {
+  flex-grow: 5;
+  color: #C0C5CF;
+}
+.sticker-header .see-more {
+  flex-grow: 1;
+  height: 50%;
+
+  padding: .2em;
+
+  border: 1px solid #EBEFF6;
+  border-radius: 25px;
+
+  color: #3782F0;
+  text-align: center;
+}
+

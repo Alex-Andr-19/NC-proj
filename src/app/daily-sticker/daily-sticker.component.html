@@ -1,5 +1,21 @@
 <div [class]="renderClass()">
-  <p>Hallo, world!!!</p>
+
+<div class="sticker-header">
+  <h3>{{dayString[weekDay]}}</h3>
+  <span class="date">01 Окт</span>
+
+  <div class="see-more">См. все</div>
 </div>
 
+<div class="sticker-content">
+  <div class="lesson" *ngFor="let lesson of lessons">
+    <lesson
+      [time]="lesson.time"
+      [format]="lesson.format"
+      [teacher]="lesson.teacher"
+      [title]="lesson.title"
+      [theme]="lesson.theme"></lesson>
+  </div>
+</div>
 
+</div>
