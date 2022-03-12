@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+header {
+  height: 65px;
+
+  padding: 0 1em;
+
+  color: #3782F0;
+
+  font-family: 'Roboto', sans-serif;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header div {
+  display: flex;
+}
+
+header .logo{
+  flex-grow: 1;
+}
+
+header .block_info {
+  flex-grow: 3;
+}
+
+header .time_info {
+  flex-grow: 5;
+}
+
+header .button {
+  padding: 1em;
+
+  background: #3782F0;
+  border-radius: 10px;
+
+  color: white;
+
+  flex-grow: 2;
+}
+
+
+
+main {
+  display: flex;
+}
+
+main .tool_list {
+  width: 72px;
+  height: calc(100vh - 65px);
+
+  padding: 0 .7em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .tool_list img {
+  width: 53px;
+}
+
+main .tool_list .content-block {
+  height: 40%;
+
+  margin-top: -80px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .main_info {
+  width: calc(100vw - 72px);
+  height: calc(100vh - 70px);
+
+  background: #F9F9FB;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.daily-sticker {
+  width: 390px;
+  height: 495px;
+
+  padding: .5em;
+  margin: 1em 1em 1em 0;
+
+  background: white;
+  border-radius: 15px;
+}
+.daily-sticker.active {
+  background: #F2F8FB;
+  border: 2px solid #83C1E0;
+}
+
+.dev_mode_size {
+  border: 2px solid red;
+}

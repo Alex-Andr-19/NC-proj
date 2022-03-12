@@ -1,0 +1,38 @@
+<header class="">
+  <div class="logo ">
+    <h1>EDU</h1>
+  </div>
+
+  <div class="block_info ">
+    <h2>Рассписание</h2>
+  </div>
+
+  <div class="time_info ">
+    <h1>22:10</h1>
+  </div>
+
+  <div class="sing_in_up ">
+    <div class="button">Sing In</div>
+  </div>
+</header>
+
+<main>
+
+  <div class="tool_list">
+    <div class="content-block">
+      <img src="../assets/calendar-alt-active.svg" alt="">
+      <img src="../assets/book-alt.svg" alt="">
+      <img src="../assets/head-side.svg" alt="">
+      <img src="../assets/brain.svg" alt="">
+    </div>
+  </div>
+  <div class="main_info">
+
+    <div class="daily-sticker" *ngFor="let v of values; let i = index">
+      <h1>{{i}}</h1>
+      <daily-sticker></daily-sticker>
+    </div>
+
+  </div>
+
+</main>
