@@ -9,16 +9,17 @@ export class DailyStickerComponent implements OnInit {
   @Input()
   isActive: boolean = false;
 
-  constructor(private _weekDay: Number) {
+  // constructor(private _weekDay: Number) {
+  constructor () {
     console.log(this.isActive);
   }
 
   ngOnInit(): void {
   }
 
-  getWeekDay(): Number {
-    return this._weekDay;
-  }
+  // getWeekDay(): Number {
+  //   return this._weekDay;
+  // }
 
   activate(): void {
     this.isActive = true;
