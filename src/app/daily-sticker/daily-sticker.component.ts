@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'daily-sticker',
@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./daily-sticker.component.css']
 })
 export class DailyStickerComponent implements OnInit {
+  @Input()
   isActive: boolean = false;
 
-  constructor(private _weekDay: Number) {}
+  constructor(private _weekDay: Number) {
+    console.log(this.isActive);
+  }
 
   ngOnInit(): void {
   }

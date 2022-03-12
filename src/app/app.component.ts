@@ -11,14 +11,6 @@ export class AppComponent {
   values: Number[] = [1, 2, 3, 4, 5, 6];
   currentDay: number = 4;
 
-  dailyStickers: DailyStickerComponent[] = [];
-  constructor() {
-    // for (let i = 1; i <= 6; i++) {
-    //   this.dailyStickers.push(new DailyStickerComponent(i));
-    // }
-    //
-    // this.dailyStickers[this.currentDay].activate();
-
-    // console.log(this.dailyStickers)
-  }
+  // dailyStickers: DailyStickerComponent[] = [];
+  constructor() {}
 }
