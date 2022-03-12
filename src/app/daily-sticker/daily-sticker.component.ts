@@ -9,6 +9,9 @@ export class DailyStickerComponent implements OnInit {
   @Input()
   isActive: boolean = false;
 
+  @Input()
+  weekDay: number = 0;
+
   // constructor(private _weekDay: Number) {
   constructor () {
     console.log(this.isActive);
@@ -29,4 +32,13 @@ export class DailyStickerComponent implements OnInit {
     this.isActive = false;
   }
 
+  renderClass(): String {
+    let res: String = "body";
+
+    if (this.isActive) {
+      res += " active";
+    }
+
+    return res;
+  }
 }

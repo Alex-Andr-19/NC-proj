@@ -8,7 +8,7 @@ import {DailyStickerComponent} from "./daily-sticker/daily-sticker.component";
 })
 export class AppComponent {
   title = 'EDU Cite';
-  values: Number[] = [1, 2, 3, 4, 5, 6];
+  stickerCount: number[] = [1, 2, 3, 4, 5, 6];
   currentDay: number = 4;
 
   // dailyStickers: DailyStickerComponent[] = [];
