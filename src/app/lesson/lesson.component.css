@@ -9,7 +9,7 @@
 }
 
 .time {
-  padding: 0 1em;
+  padding: 0 .65em;
 
   display: flex;
   justify-content: center;
@@ -25,10 +25,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.content .openedInfo {
-  /*flex-grow: 10;*/
 }
 
 .content .first-line {

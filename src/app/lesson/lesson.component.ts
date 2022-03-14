@@ -22,6 +22,8 @@ export class LessonComponent implements OnInit {
   @Input()
   opened: String = "";
 
+  canEdit: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {

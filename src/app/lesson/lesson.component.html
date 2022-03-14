@@ -5,7 +5,7 @@
       <div class="first-line">
         <div class="format">{{format}}</div>
         <div class="teacher">{{teacher}}</div>
-        <div class="edit-button"><img src="../../assets/pencil.svg" alt=""></div>
+        <div class="edit-button"><img *ngIf="canEdit" src="../../assets/pencil.svg" alt=""></div>
       </div>
       <div class="second-line title">
         <h4>{{title}}</h4>

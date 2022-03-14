@@ -48,7 +48,7 @@ main {
 }
 
 main .tool_list {
-  width: 72px;
+  width: 2.7em;
   height: calc(100vh - 65px);
 
   padding: 0 .7em;
@@ -60,7 +60,7 @@ main .tool_list {
 }
 
 main .tool_list img {
-  width: 53px;
+  width: 35px;
 }
 
 main .tool_list .content-block {
