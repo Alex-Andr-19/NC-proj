@@ -1,3 +1,10 @@
+.wrap {
+  position: relative;
+
+  width: 93%;
+  height: 96%;
+}
+
 .body {
   width: 93%;
   height: 96%;
@@ -9,6 +16,8 @@
   border-radius: 15px;
 
   overflow: hidden;
+
+  z-index: 1;
 }
 .active {
   background: #F2F8FB;
@@ -41,5 +50,68 @@
 
   color: #3782F0;
   text-align: center;
+
+  cursor: pointer;
+}
+.sticker-header .see-more:hover {
+  border-color: #3782F0;
 }
 
+.columnsTitle {
+  width: 95%;
+
+  display: flex;
+  align-items: center;
+}
+.columnsTitle h3 {
+  margin: .5em 0;
+}
+.columnsTitle h3:first-child {
+  flex-grow: 7;
+
+  padding-left: 4em;
+}
+.columnsTitle h3:last-child {
+  flex-grow: 10;
+  padding-left: 1.3em;
+}
+
+.body .sticker-content {
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.wrap.opened {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, .25);
+  border-radius: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 2;
+}
+
+.wrap.opened .body {
+  width: 70%;
+  height: 85%;
+}
+
+.wrap.opened .sticker-content {
+  height: 83%;
+
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.wrap.opened .active {
+  background: white;
+}

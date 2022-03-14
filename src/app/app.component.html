@@ -26,11 +26,13 @@
       <img src="../assets/brain.svg" alt="">
     </div>
   </div>
-  <div class="main_info">
+  <div [class]="renderMainInfo()">
 
     <div class="daily-sticker" *ngFor="let v of stickerCount; let i = index">
-      <daily-sticker *ngIf="cycleNum(0, i + startDay, 5) === currentDay" [isActive]="true" [weekDay]="cycleNum(0, i + startDay, 5)"></daily-sticker>
-      <daily-sticker *ngIf="cycleNum(0, i + startDay, 5) !== currentDay" [isActive]="false" [weekDay]="cycleNum(0, i + startDay, 5)"></daily-sticker>
+      <daily-sticker
+        *ngIf="cycleNum(0, i + startDay, 5) === currentDay" [isCurrent]="true" [weekDay]="cycleNum(0, i + startDay, 5)" (opened)="toggleScrollable($event)"></daily-sticker>
+
+      <daily-sticker *ngIf="cycleNum(0, i + startDay, 5) !== currentDay" [isCurrent]="false" [weekDay]="cycleNum(0, i + startDay, 5)" (opened)="toggleScrollable($event)"></daily-sticker>
     </div>
 
   </div>

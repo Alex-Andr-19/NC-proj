@@ -1,10 +1,15 @@
-<div [class]="renderClass()">
+<div [class]="renderWrap()">
+<div [class]="renderBody()">
 
 <div class="sticker-header">
   <h3>{{dayString[weekDay]}}</h3>
   <span class="date">01 Окт</span>
 
-  <div class="see-more">См. все</div>
+  <div class="see-more" (click)="toggleSticker()">{{toggleText[_toInt(localOpened)]}}</div>
+</div>
+<div class="columnsTitle" *ngIf="localOpened">
+  <h3>Занятия</h3>
+  <h3>Домашнее задание</h3>
 </div>
 
 <div class="sticker-content">
@@ -14,8 +19,12 @@
       [format]="lesson.format"
       [teacher]="lesson.teacher"
       [title]="lesson.title"
-      [theme]="lesson.theme"></lesson>
+      [theme]="lesson.theme"
+      [homeWork]="lesson.homeWork"
+      [opened]="localOpened ? 'opened' : 'hidden'"
+    ></lesson>
   </div>
 </div>
 
+</div>
 </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {DailyStickerComponent} from "./daily-sticker/daily-sticker.component";
+
 
 @Component({
   selector: 'app-root',
@@ -12,6 +12,8 @@ export class AppComponent {
 
   startDay: number = 3;
   currentDay: number = 4;
+
+  isScrollable: boolean = true;
 
   constructor() {}
 
@@ -28,5 +30,22 @@ export class AppComponent {
     }
 
     return res;
+  }
+
+  toggleScrollable(value: boolean): void {
+    console.log(value);
+    this.isScrollable = !value;
+    this.renderMainInfo()
+  }
+
+  renderMainInfo(): string {
+    let res: string = "main_info";
+    if (this.isScrollable) {
+      res += " scrollable";
+    } else {
+      res += " hidden";
+    }
+
+    return res
   }
 }

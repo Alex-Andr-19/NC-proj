@@ -2,7 +2,7 @@
   width: 100%;
   height: 28%;
 
-  margin-bottom: 1.5em;
+  margin-bottom: 1.1em;
 
   display: flex;
   flex-direction: row;
@@ -21,6 +21,14 @@
 
   background: #FCFBFF;
   border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content .openedInfo {
+  /*flex-grow: 10;*/
 }
 
 .content .first-line {
@@ -44,4 +52,17 @@
 
 .content .title h4 {
   margin: .8em 0;
+}
+
+.borderLine {
+  width: 2px;
+  height: 90%;
+
+  background: #DCDCDC;
+}
+
+.homeWork {
+  max-width: 60%;
+
+  padding: 1em;
 }

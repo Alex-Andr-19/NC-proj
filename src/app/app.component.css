@@ -75,6 +75,8 @@ main .tool_list .content-block {
 }
 
 main .main_info {
+  position: relative;
+
   width: calc(100vw - 72px);
   height: calc(100vh - 70px);
 
@@ -87,8 +89,15 @@ main .main_info {
   flex-wrap: wrap;
   justify-content: center;
 
+}
+
+main .main_info.scrollable {
   overflow: scroll;
   overflow-x: hidden;
+}
+main .main_info.hidden {
+  overflow: hidden;
+  /*overflow-x: hidden;*/
 }
 
 .daily-sticker {

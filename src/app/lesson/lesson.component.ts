@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {installPackage} from "@angular/cli/utilities/install-package";
 
 @Component({
   selector: 'lesson',
@@ -18,6 +17,10 @@ export class LessonComponent implements OnInit {
   title: String = "";
   @Input()
   theme: String = "";
+  @Input()
+  homeWork: String = "";
+  @Input()
+  opened: String = "";
 
   constructor() { }
 

@@ -1,14 +1,19 @@
 <div class="body">
   <div class="time">{{time}}</div>
   <div class="content">
-    <div class="first-line">
-      <div class="format">{{format}}</div>
-      <div class="teacher">{{teacher}}</div>
-      <div class="edit-button"><img src="../../assets/pencil.svg" alt=""></div>
+    <div class="openedInfo">
+      <div class="first-line">
+        <div class="format">{{format}}</div>
+        <div class="teacher">{{teacher}}</div>
+        <div class="edit-button"><img src="../../assets/pencil.svg" alt=""></div>
+      </div>
+      <div class="second-line title">
+        <h4>{{title}}</h4>
+      </div>
+      <div class="third-line theme">{{theme}}</div>
     </div>
-    <div class="second-line title">
-      <h4>{{title}}</h4>
-    </div>
-    <div class="third-line theme">{{theme}}</div>
+
+    <div *ngIf="opened === 'opened'" class="borderLine"></div>
+    <div *ngIf="opened === 'opened'" class="homeWork">{{homeWork}}</div>
   </div>
 </div>
