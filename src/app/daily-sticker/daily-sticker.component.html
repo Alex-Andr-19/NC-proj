@@ -2,8 +2,9 @@
 <div [class]="renderBody()">
 
 <div class="sticker-header">
-  <h3>{{dayString[weekDay]}}</h3>
-  <span class="date">01 Окт</span>
+  <h3>{{dayString[dayNum - 1]}}</h3>
+<!--  <span class="date">{{_addZeros(dayString[dayNum])}} Окт</span>-->
+  <span class="date">, {{dateNum}} {{shortMonthsString[monthNum]}}</span>
 
   <div class="see-more" (click)="toggleSticker()">{{toggleText[_toInt(localOpened)]}}</div>
 </div>
@@ -13,16 +14,12 @@
 </div>
 
 <div class="sticker-content">
-  <div class="lesson" *ngFor="let lesson of lessons">
+  <div class="lesson" *ngFor="let lesson of data; let i = index">
     <lesson
-      [time]="lesson.time"
-      [format]="lesson.format"
-      [teacher]="lesson.teacher"
-      [title]="lesson.title"
-      [theme]="lesson.theme"
-      [homeWork]="lesson.homeWork"
+      [data]="lesson"
       [opened]="localOpened ? 'opened' : 'hidden'"
     ></lesson>
+    <div class="big-space" *ngIf="i === 2 && !localOpened"></div>
   </div>
 </div>
 

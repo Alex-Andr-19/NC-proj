@@ -17,6 +17,8 @@
 }
 
 .content {
+  min-width: 75%;
+
   padding: .5em;
 
   background: #FCFBFF;
@@ -25,6 +27,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.content .openedInfo {
+  width: 100%;
 }
 
 .content .first-line {
@@ -50,15 +56,32 @@
   margin: .8em 0;
 }
 
+
+.content.opened {
+  min-width: 90%;
+}
+
+.content.opened .openedInfo {
+  width: 0;
+
+  flex-grow: 70;
+}
+
 .borderLine {
-  width: 2px;
+  max-width: 2px;
   height: 90%;
 
   background: #DCDCDC;
+
+  flex-grow: 1;
 }
 
 .homeWork {
-  max-width: 60%;
+  width: 0;
 
   padding: 1em;
+
+  flex-grow: 150;
 }
+
+/*.content.opened */

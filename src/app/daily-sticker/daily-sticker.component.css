@@ -115,3 +115,7 @@
 .wrap.opened .active {
   background: white;
 }
+
+.big-space {
+  height: 60px;
+}

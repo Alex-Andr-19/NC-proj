@@ -1,19 +1,19 @@
 <div class="body">
-  <div class="time">{{time}}</div>
-  <div class="content">
+  <div class="time">{{lessonsTime[data.lessonNum]}}</div>
+  <div [class]="renderContent()">
     <div class="openedInfo">
       <div class="first-line">
-        <div class="format">{{format}}</div>
-        <div class="teacher">{{teacher}}</div>
+        <div class="format">{{data.format}}</div>
+        <div class="teacher">{{data.teacher}}</div>
         <div class="edit-button"><img *ngIf="canEdit" src="../../assets/pencil.svg" alt=""></div>
       </div>
       <div class="second-line title">
-        <h4>{{title}}</h4>
+        <h4>{{data.name}}</h4>
       </div>
-      <div class="third-line theme">{{theme}}</div>
+      <div class="third-line theme">{{data.theme}}</div>
     </div>
 
     <div *ngIf="opened === 'opened'" class="borderLine"></div>
-    <div *ngIf="opened === 'opened'" class="homeWork">{{homeWork}}</div>
+    <div *ngIf="opened === 'opened'" class="homeWork">{{data.homework}}</div>
   </div>
 </div>

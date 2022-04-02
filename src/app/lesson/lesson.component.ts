@@ -1,5 +1,19 @@
 import {Component, Input, OnInit} from '@angular/core';
 
+interface Lesson {
+  id: number,
+  classRoom: string,
+  date: number,
+  formatDate: Date,
+  format: string,
+  teacher: string,
+  name: string,
+  theme: string,
+  homework: string,
+  lessonNum: number,
+  localGroup: number[],
+}
+
 @Component({
   selector: 'lesson',
   templateUrl: './lesson.component.html',
@@ -7,26 +21,46 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class LessonComponent implements OnInit {
 
-  @Input()
-  time: String = "00:00";
-  @Input()
-  format: String = "";
-  @Input()
-  teacher: String = "";
-  @Input()
-  title: String = "";
-  @Input()
-  theme: String = "";
-  @Input()
-  homeWork: String = "";
-  @Input()
-  opened: String = "";
+  @Input() opened: String = "";
+  @Input() data: Lesson = {
+    id: 0,
+    classRoom: "",
+    date: 0,
+    formatDate: new Date(),
+    format: "",
+    teacher: "",
+    name: "",
+    theme: "",
+    homework: "",
+    lessonNum: 0,
+    localGroup: [],
+  };
 
   canEdit: boolean = true;
+
+  hours: number = 0;
+  minutes: number = 0;
+
+  lessonsTime: string[] = ["9:00", "10:45", "13:00", "14:45", "16:30", "18:15", "20:00"]
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngDoCheck() {
+    this.hours = this.data.formatDate.getHours();
+    this.minutes = this.data.formatDate.getMinutes();
+  }
+
+  renderContent(): string {
+    let res: string = "content";
+
+    if (this.opened == "opened") {
+      res += ' opened';
+    }
+
+    return res;
   }
 
 }

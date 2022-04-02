@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  lib: {
+    api: ["studentsUrl", "teachersUrl", "lessonsUrl", "groupsUrl"]
+  },
+  production: false,
+  studentsUrl: "http://localhost:3000/getStudents",
+  teachersUrl: "http://localhost:3000/getTeachers",
+  lessonsUrl: "http://localhost:3000/getLessons",
+  groupsUrl: "http://localhost:3000/getGroups",
 };
 
 /*
