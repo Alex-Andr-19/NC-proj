@@ -20,25 +20,17 @@
 
   <div class="tool_list">
     <div class="content-block">
-      <img src="../assets/calendar-alt-active.svg" alt="">
-      <img src="../assets/book-alt.svg" alt="">
-      <img src="../assets/head-side.svg" alt="">
-      <img src="../assets/brain.svg" alt="">
+      <img src="{{toolIcons[0]}}" alt="image" (click)="setPage(0)">
+      <img src="{{toolIcons[1]}}" alt="image" (click)="setPage(1)">
+      <img src="{{toolIcons[2]}}" alt="image" (click)="setPage(2)">
+      <img src="{{toolIcons[3]}}" alt="image" (click)="setPage(3)">
     </div>
   </div>
-  <div [class]="renderMainInfo()" id="mi">
 
-    <div class="daily-sticker" *ngFor="let v of stickerCount; let i = index">
-
-      <daily-sticker
-        [isToday]="_data.lessons[i][0].formatDate.getDay() === currentDay"
-        [stickerNum]="i"
-        (opened)="toggleScrollable($event)"
-        [data]="_data.lessons[i]"
-      ></daily-sticker>
-
-    </div>
-
+  <div class="main_info">
+    <router-outlet></router-outlet>
   </div>
+
+
 
 </main>

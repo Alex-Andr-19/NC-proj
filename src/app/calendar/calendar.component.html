@@ -1,0 +1,12 @@
+<div [class]="renderMainInfo()" id="mi">
+  <div class="daily-sticker" *ngFor="let v of stickerCount; let i = index">
+
+    <daily-sticker
+      [isToday]="lessons[i][0]?.formatDate?.getDay() === currentDay"
+      [stickerNum]="i"
+      (opened)="toggleScrollable($event)"
+      [data]="lessons[i]"
+    ></daily-sticker>
+
+  </div>
+</div>

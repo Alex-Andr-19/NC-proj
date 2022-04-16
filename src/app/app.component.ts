@@ -30,14 +30,11 @@ interface ApiDataI {
 })
 export class AppComponent {
   title = 'EDU Cite';
-  stickerCount: number[] = [1, 2, 3, 4, 5, 6];
 
-  startDay: number = 0;
-  startDate: Date = new Date();
-  today: Date = new Date(1647694637000);
-  currentDay: number = this.today.getDay();
 
-  isScrollable: boolean = true;
+
+  page: number = 0;
+  toolIcons: string[] = [];
 
   private _apiUrls: string[] = environment.lib.api;
   _data: ApiDataI = {
@@ -48,9 +45,12 @@ export class AppComponent {
   };
 
   constructor(private service: ApiService) {
-    this.getData()
+    // this.getData()
+
+    this.setPage(0);
   }
 
+  // load data from api (my own server)
   private getData() {
     for (let api of this._apiUrls) {
       this.service.getData(api).subscribe(
@@ -67,58 +67,25 @@ export class AppComponent {
               l.formatDate = new Date(l.date);
             })
           })
-
-          // console.log("FROM app.component:");
-          // console.log(this.currentDay);
-          // console.log("=====\n");
         }
       )
     }
   }
 
-  cycleNum(min: number, value: number, max: number): number {
+  // change page on main-block
+  setPage(value: number): void {
+    this.page = value;
+    this.toolIcons = [
+      "../assets/calendar",
+      "../assets/book",
+      "../assets/head-side",
+      "../assets/brain",
+    ];
 
-    let res: number = value;
-    let size: number = max - min + 1;
-
-    while (res > max) {
-      res -= size;
+    for (let i: number = 0; i < this.toolIcons.length; i++) {
+      if (i === this.page) this.toolIcons[i] += "-active";
+      this.toolIcons[i] += ".svg";
     }
-    while (res < min) {
-      res += size;
-    }
-
-    return res;
   }
-
-  toggleScrollable(value: boolean): void {
-    document.getElementById("mi")?.scroll({top: 0});
-
-    this.isScrollable = !value;
-    this.renderMainInfo();
-  }
-
-  renderMainInfo(): string {
-    let res: string = "main_info";
-    if (this.isScrollable) {
-      res += " scrollable";
-    } else {
-      res += " hidden";
-    }
-
-    return res
-  }
-
-  // createLocalLessonsArray(dayNum: number): Lesson[] {
-  //   let res: Lesson[] = [];
-  //
-  //   for (let d of this._data.lessons) {
-  //     if (d[0].formatDate.getDay() === dayNum) {
-  //       res.push(d);
-  //     }
-  //   }
-  //
-  //   return res;
-  // }
 
 }

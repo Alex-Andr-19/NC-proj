@@ -56,10 +56,6 @@ export class DailyStickerComponent {
 
   constructor () {}
 
-  _isEqualDate(a: Date, b: Date): boolean {
-    return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate()
-  }
-
   renderWrap(): string {
     let res: string = "wrap";
     if (this.localOpened) {
@@ -101,6 +97,9 @@ export class DailyStickerComponent {
       this.dateNum = this.data[0].formatDate.getDate();
       this.monthNum = this.data[0].formatDate.getMonth();
     }
+
+    console.log("From daily-sticker");
+    console.log(this.data);
 
   }
 
