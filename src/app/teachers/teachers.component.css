@@ -1,0 +1,8 @@
+.teacher-block {
+  width: 98%;
+  height: 96%;
+
+  padding: 1em;
+
+  overflow-y: scroll;
+}

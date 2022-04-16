@@ -7,10 +7,13 @@ import { LessonComponent } from './lesson/lesson.component';
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
 import { CalendarComponent } from './calendar/calendar.component';
+import { TeachersComponent } from './teachers/teachers.component';
+import { TeacherComponent } from './teacher/teacher.component';
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "calendar", pathMatch: "full" },
-  { path: "calendar", component: CalendarComponent, data: {} }
+  { path: "calendar", component: CalendarComponent},
+  { path: "teachers", component: TeachersComponent},
 ]
 
 @NgModule({
@@ -18,7 +21,9 @@ const appRoutes: Routes = [
     AppComponent,
     DailyStickerComponent,
     LessonComponent,
-    CalendarComponent
+    CalendarComponent,
+    TeachersComponent,
+    TeacherComponent
   ],
   imports: [
     BrowserModule,

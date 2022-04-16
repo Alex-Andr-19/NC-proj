@@ -97,29 +97,5 @@ export class DailyStickerComponent {
       this.dateNum = this.data[0].formatDate.getDate();
       this.monthNum = this.data[0].formatDate.getMonth();
     }
-
-    console.log("From daily-sticker");
-    console.log(this.data);
-
   }
-
-  _addZeros(value: string): string {
-    return value.length == 2 ? value : ("0" + value)
-  }
-
-  cycleNum(min: number, value: number, max: number): number {
-
-    let res: number = value;
-    let size: number = max - min + 1;
-
-    while (res > max) {
-      res -= size;
-    }
-    while (res < min) {
-      res += size;
-    }
-
-    return res;
-  }
-
 }

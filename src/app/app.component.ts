@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {ApiService} from "./api.service";
-import {environment} from "../environments/environment";
+import {Router} from "@angular/router";
 
 interface Lesson {
   id: number,
@@ -31,45 +31,15 @@ interface ApiDataI {
 export class AppComponent {
   title = 'EDU Cite';
 
-
-
   page: number = 0;
   toolIcons: string[] = [];
 
-  private _apiUrls: string[] = environment.lib.api;
-  _data: ApiDataI = {
-    students: [],
-    teachers: [],
-    lessons: [[]],
-    groups: []
-  };
-
-  constructor(private service: ApiService) {
-    // this.getData()
-
-    this.setPage(0);
-  }
-
-  // load data from api (my own server)
-  private getData() {
-    for (let api of this._apiUrls) {
-      this.service.getData(api).subscribe(
-        (res: object) => {
-          // @ts-ignore
-          this._data[api.substring(0, api.length - 3)] = res.res;
-        },
-        (er: object) => {
-          console.log("ERR:", er);
-        },
-        () => {
-          this._data.lessons?.forEach((d) => {
-            d.forEach((l) => {
-              l.formatDate = new Date(l.date);
-            })
-          })
-        }
-      )
-    }
+  constructor(private service: ApiService, private router: Router) {
+    // this.setPage(0);
+    setTimeout(() => {
+      if (this.router.url === "/calendar") this.setPage(0);
+      if (this.router.url === "/teachers") this.setPage(2);
+    }, 0)
   }
 
   // change page on main-block
