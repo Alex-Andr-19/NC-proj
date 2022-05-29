@@ -1,0 +1,19 @@
+.works .content {
+  display: flex;
+}
+
+.work {
+  width: 10%;
+  height: 150px;
+
+  margin-right: 1em;
+  padding: 1em;
+
+  background: lightgrey;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}

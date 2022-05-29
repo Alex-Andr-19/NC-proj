@@ -3,7 +3,6 @@
 
 <div class="sticker-header">
   <h3>{{dayString[dayNum - 1]}}</h3>
-<!--  <span class="date">{{_addZeros(dayString[dayNum])}} Окт</span>-->
   <span class="date">, {{dateNum}} {{shortMonthsString[monthNum]}}</span>
 
   <div class="see-more" (click)="toggleSticker()">{{toggleText[_toInt(localOpened)]}}</div>

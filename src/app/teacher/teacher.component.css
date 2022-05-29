@@ -1,11 +1,16 @@
 .teacher {
+  position: relative;
+
   width: 95%;
 
-  padding: .5em;
+  padding: 1em;
 
   margin-bottom: 1em;
 
   background: white;
+  border-radius: 15px;
+
+  overflow: hidden;
 }
 
 .photo {
@@ -17,4 +22,100 @@
 
 .photo img {
   margin-left: -30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info {
+  width: 89%;
+
+  display: flex;
+  flex-direction: column;
+}
+.info div:not(.special) {
+  min-height: 25%;
+}
+
+.info .first-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info .first-line .fio {
+  width: 30%;
+}
+.info .first-line .department {
+  width: 40%;
+
+  text-align: center;
+}
+.info .first-line .third-block {
+  width: 30%;
+
+  text-align: right;
+}
+.info .first-line .close-button {
+  width: 16%;
+
+  padding: .2em .5em;
+
+  border: 1px solid #F1F4F9;
+  border-radius: 15px;
+
+  color: #3782F0;
+
+  float: right;
+}
+
+.second-line {
+  display: flex;
+}
+
+.second-line .special {
+  height: 80%;
+
+  padding: 0 .8em;
+  margin-right: 1em;
+
+  background: #EAF4D5;
+  border-radius: 15px;
+  color: #97CA2B;
+
+  display: flex;
+  align-items: center;
+}
+
+.see-more {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+
+  width: 34px;
+
+  padding: .2em .5em;
+
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.see-more div {
+  width: 9px;
+  height: 9px;
+
+  background: lightgrey;
+
+  border-radius: 50%;
+}
+
+.see-more:hover div {
+  background: gray;
+}
+
+.button:hover {
+  cursor: pointer;
 }

@@ -1,10 +1,51 @@
-<div class="teacher">
+<div class="teacher closed" id="t{{data.id}}">
   <div class="header">
     <div class="photo"><img src="../../assets/{{data.photo}}" alt="" width="200px"></div>
-    <div class="info"></div>
+    <div class="info">
+      <div class="first-line">
+        <div class="fio"><b>{{data.fullName}}</b></div>
+        <div class="department"><b>{{data.department}}</b></div>
+        <div class="third-block">
+          <div class="contacts" *ngIf="!localOpened">{{formatPhoneNumber()}}</div>
+          <div class="close-button button" *ngIf="localOpened" (click)="toggleTeacher()">Скрыть</div>
+        </div>
+      </div>
+      <div class="second-line">
+        <div class="special" *ngFor="let sp of data.special.split(', ')">
+          <b>{{sp}}</b>
+        </div>
+      </div>
+      <div class="about" *ngIf="!localOpened">{{data.info}}</div>
+    </div>
   </div>
 
-  <div class="description">
+  <div class="description" *ngIf="localOpened">
+    <h4>О преподавателе</h4>
+    {{data.info}}
+  </div>
 
+  <div class="works" *ngIf="localOpened">
+    <h4>Работы</h4>
+    <div class="content">
+      <div class="work" *ngFor="let w of createWorkList()">
+        <a href="#"><img src="../../assets/file.svg" alt="" width="50px" height="50px"></a>
+        {{w}}
+      </div>
+    </div>
+  </div>
+
+  <div class="all-contacts" *ngIf="localOpened">
+    <h4>Контакты</h4>
+    <div class="content">
+      <div class="contact" *ngFor="let c of createContactList()">
+        {{c}}
+      </div>
+    </div>
+  </div>
+
+  <div class="see-more button" title="Подробнее" (click)="toggleTeacher()" *ngIf="!localOpened">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 </div>

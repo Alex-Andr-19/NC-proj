@@ -42,7 +42,7 @@ export class AppComponent {
     }, 0)
   }
 
-  // change page on main-block
+  // change page-image on main-block
   setPage(value: number): void {
     this.page = value;
     this.toolIcons = [

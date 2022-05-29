@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 interface Teacher {
   id: number,
@@ -18,7 +18,7 @@ interface Teacher {
 @Component({
   selector: 'teacher',
   templateUrl: './teacher.component.html',
-  styleUrls: ['./teacher.component.css']
+  styleUrls: ['./teacher.component.css', './opened-teacher.css']
 })
 export class TeacherComponent implements OnInit {
   @Input() data: Teacher = {
@@ -36,20 +36,33 @@ export class TeacherComponent implements OnInit {
     works: "",
   };
 
+  @Output() opened: EventEmitter<[boolean, number]> = new EventEmitter<[boolean, number]>();
+
+  localOpened: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  renderPhotoClass(): string {
-    let res: string = "photo ";
-    if (this.data.photo === "teacher2.jpg") {
-      res += "p2";
-    } else {
-      res += "p1";
-    }
+  formatPhoneNumber(): string {
+    return `${this.data.contacts.substring(0, 2)} (${this.data.contacts.substring(2, 5)}) ${this.data.contacts.substring(5, 8)}-${this.data.contacts.substring(8, 10)}-${this.data.contacts.substring(10, 12)}`;
+  }
 
-    return res;
+  toggleTeacher(): void {
+    this.localOpened = !this.localOpened;
+    this.opened.emit([this.localOpened, this.data.id]);
+
+    document.getElementById(`t${this.data.id}`)?.classList.toggle("opened");
+    document.getElementById(`t${this.data.id}`)?.classList.toggle("closed");
+  }
+
+  createWorkList(): Array<string> {
+    return this.data.works.split(', ');
+  }
+
+  createContactList(): Array<string> {
+    return this.data.contacts.split(", ")
   }
 
 }
