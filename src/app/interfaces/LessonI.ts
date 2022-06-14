@@ -1,4 +1,4 @@
-interface Lesson {
+interface LessonI {
   id: number,
   classRoom: string,
   date: number,

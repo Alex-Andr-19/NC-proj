@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 // @ts-ignore
-import {Teacher} from "../interfaces/TeacherI"
+import {TeacherI} from "../interfaces/TeacherI.ts"
 
 @Component({
   selector: 'teacher',
@@ -8,7 +8,7 @@ import {Teacher} from "../interfaces/TeacherI"
   styleUrls: ['./teacher.component.css', './opened-teacher.css']
 })
 export class TeacherComponent implements OnInit {
-  @Input() data: Teacher = {
+  @Input() data: TeacherI = {
     id: 0,
     contacts: "",
     department: "",

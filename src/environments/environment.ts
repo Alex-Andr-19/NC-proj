@@ -11,6 +11,7 @@ export const environment = {
   teachersUrl: "http://localhost:3000/getTeachers",
   lessonsUrl: "http://localhost:3000/getLessons",
   groupsUrl: "http://localhost:3000/getGroups",
+  authUrl: "http://localhost:3000/auth"
 };
 
 /*

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 // @ts-ignore
-import {Lesson} from "../interfaces/Lesson.ts"
+import {LessonI} from "../../interfaces/Lesson.ts"
 
 
 @Component({
@@ -11,7 +11,7 @@ import {Lesson} from "../interfaces/Lesson.ts"
 export class LessonComponent implements OnInit {
 
   @Input() opened: String = "";
-  @Input() data: Lesson = {
+  @Input() data: LessonI = {
     id: 0,
     classRoom: "",
     date: 0,

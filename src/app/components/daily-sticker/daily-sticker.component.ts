@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 // @ts-ignore
-import {Lesson} from "../interfaces/Lesson.ts"
+import {LessonI} from "../../interfaces/Lesson.ts"
 
 
 @Component({
@@ -11,7 +11,7 @@ import {Lesson} from "../interfaces/Lesson.ts"
 export class DailyStickerComponent {
   @Input() isToday: boolean = false;
   @Input() stickerNum: number = 0;
-  @Input() data: Lesson[] = [
+  @Input() data: LessonI[] = [
     {
       id: 0,
       classRoom: "",

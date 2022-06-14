@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ApiService} from "../api.service";
+import {ApiService} from "../../services/api.service";
 // @ts-ignore
-import {Lesson} from "../interfaces/Lesson.ts"
+import {LessonI} from "../../interfaces/Lesson.ts"
 
 @Component({
   selector: 'app-calendar',
@@ -19,7 +19,7 @@ export class CalendarComponent implements OnInit {
 
   isScrollable: boolean = true;
 
-  lessons: [Lesson[]] = [[]];
+  lessons: [LessonI[]] = [[]];
 
   constructor(private service: ApiService) {
     this.getData();

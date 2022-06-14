@@ -1,4 +1,4 @@
-interface Teacher {
+interface TeacherI {
   id: number,
   contacts: string,
   department: string,

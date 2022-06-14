@@ -1,0 +1,25 @@
+<div class="login-wrapper">
+
+<form class="login-form" [formGroup]="form" (ngSubmit)="tryLog($event)">
+  <div>
+    <h3>Login</h3>
+    <input
+      type="text"
+      placeholder="login"
+      formControlName="login"
+      required
+    >
+  </div>
+  <div>
+    <h3>Password</h3>
+    <input
+      type="text"
+      placeholder="password"
+      formControlName="password"
+      required
+    >
+  </div>
+  <button type="submit">Зайти</button>
+</form>
+
+</div>

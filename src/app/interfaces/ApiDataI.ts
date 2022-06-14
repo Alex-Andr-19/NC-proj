@@ -1,5 +1,5 @@
 // @ts-ignore
-import {Lesson} from "./Lesson.ts"
+import {LessonI} from "./LessonI.js"
 
 interface ApiDataI {
   students: Object[],
