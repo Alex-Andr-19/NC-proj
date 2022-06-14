@@ -1,19 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ApiService} from "../api.service";
-
-interface Lesson {
-  id: number,
-  classRoom: string,
-  date: number,
-  formatDate: Date,
-  format: string,
-  teacher: string,
-  name: string,
-  theme: string,
-  homework: string,
-  lessonNum: number,
-  localGroup: number[],
-}
+// @ts-ignore
+import {Lesson} from "../interfaces/Lesson.ts"
 
 @Component({
   selector: 'app-calendar',

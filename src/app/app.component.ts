@@ -2,26 +2,6 @@ import { Component } from '@angular/core';
 import {ApiService} from "./api.service";
 import {Router} from "@angular/router";
 
-interface Lesson {
-  id: number,
-  classRoom: string,
-  date: number,
-  formatDate: Date,
-  format: string,
-  teacher: string,
-  name: string,
-  theme: string,
-  homework: string,
-  lessonNum: number,
-  localGroup: number[],
-}
-
-interface ApiDataI {
-    students: Object[],
-    teachers: Object[],
-    lessons: [Lesson[]],
-    groups: Object[]
-}
 
 @Component({
   selector: 'app-root',

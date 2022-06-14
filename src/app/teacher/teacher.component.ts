@@ -1,19 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-
-interface Teacher {
-  id: number,
-  contacts: string,
-  department: string,
-  fullName: string,
-  groups: string,
-  info: string,
-  login: string,
-  password: string,
-  photo: string,
-  shortName: string,
-  special: string,
-  works: string,
-}
+// @ts-ignore
+import {Teacher} from "../interfaces/TeacherI"
 
 @Component({
   selector: 'teacher',

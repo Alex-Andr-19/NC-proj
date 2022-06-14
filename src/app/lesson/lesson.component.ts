@@ -1,18 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
+// @ts-ignore
+import {Lesson} from "../interfaces/Lesson.ts"
 
-interface Lesson {
-  id: number,
-  classRoom: string,
-  date: number,
-  formatDate: Date,
-  format: string,
-  teacher: string,
-  name: string,
-  theme: string,
-  homework: string,
-  lessonNum: number,
-  localGroup: number[],
-}
 
 @Component({
   selector: 'lesson',
