@@ -3,6 +3,7 @@ import {AuthService} from "../../services/auth.service";
 import {FormControl, FormGroup} from "@angular/forms";
 // @ts-ignore
 import { UserI } from "../../interfaces/UserI.ts"
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,9 @@ export class LoginComponent implements OnInit {
 
   tryLog(ev: SubmitEvent): void {
     this.auth.login(this.form.value).subscribe(
-      () => console.log("Success!!!"),
+      (res: Observable<Object>) => {
+        console.log(res);
+      },
         (er: any) => {
         console.error(er);
       }
