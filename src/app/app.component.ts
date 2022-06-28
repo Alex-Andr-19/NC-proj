@@ -13,6 +13,12 @@ export class AppComponent {
 
   page: number = 0;
   toolIcons: string[] = [];
+  pageNames: string [] = [
+    "Рассписание",
+    "Материалы",
+    "Преподаватели",
+    "Сессия",
+  ];
 
   constructor(private service: ApiService, private router: Router) {
     // this.setPage(0);
